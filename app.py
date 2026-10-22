@@ -8,11 +8,7 @@ with st.sidebar:
  st.caption('Keys stay in this running app session. For deployment, use server-side secrets.')
  abuse_key=st.text_input('AbuseIPDB API key',type='password',value=os.getenv('ABUSEIPDB_API_KEY',''))
  vt_key=st.text_input('VirusTotal API key',type='password',value=os.getenv('VIRUSTOTAL_API_KEY',''))
- ipqs_key = st.text_input(
-    'IPQualityScore API key',
-    type='password',
-    value=st.secrets.get('IPQUALITYSCORE_API_KEY', '')
-)
+ipqs_key = st.secrets.get('IPQUALITYSCORE_API_KEY', '')
  st.caption('Optional services. Their quotas and terms apply.')
 
 def get(url,headers=None,params=None):
